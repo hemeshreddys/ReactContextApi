@@ -1,15 +1,19 @@
-import React from 'react';
+import React,{useState} from "react"
+import MovieList from "./MovieList"
+import Nav from "./Nav"
+import AddMovie from './AddMovie'
 import './App.css';
-import BookList from './BookList';
-import Cart from './Cart';
+import {MovieProvider} from './MovieContext'
 
-function App() {
-	return (
-		<div className="App">
-			<Cart />
-			<BookList />
-		</div>
-	);
+const App = () => {
+  return(
+    <MovieProvider>
+      <div className="App">
+        <AddMovie/>
+        <Nav/>
+        <MovieList/>
+      </div>
+    </MovieProvider>
+  )
 }
-
-export default App;
+export default App
